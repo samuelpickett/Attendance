@@ -30,12 +30,12 @@ namespace Attendance.Pages_Events
                 return NotFound();
             }
 
-            var Event =  await _context.Event.FirstOrDefaultAsync(m => m.Id == id);
-            if (Event == null)
+            var _event =  await _context.Event.FirstOrDefaultAsync(m => m.Id == id);
+            if (_event == null)
             {
                 return NotFound();
             }
-            Event = Event;
+            Event = _event;
             return Page();
         }
 

@@ -21,7 +21,6 @@ C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\rjsmcshtml.dswa.cache.jso
 C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\scopedcss\bundle\Attendance.styles.css
 C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\scopedcss\projectbundle\Attendance.bundle.scp.css
-C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\compressed\xkxdmc3469-{0}-b9sayid5wm-b9sayid5wm.gz
 C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\compressed\fzono8hsmn-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\compressed\chl8mal29o-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\compressed\6t8et67nke-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -83,8 +82,6 @@ C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\compressed\457n1jfvec-{0}
 C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\compressed\cgy8dhndxu-{0}-muycvpuwrr-muycvpuwrr.gz
 C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\compressed\y4hruix0mr-{0}-87fc7y1x7t-87fc7y1x7t.gz
 C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\compressed\6rmp2zapuz-{0}-mlv21k5csn-mlv21k5csn.gz
-C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\compressed\oc0z1ujtwk-{0}-4f73oq88tp-4f73oq88tp.gz
-C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\compressed\m2kj36v0ap-{0}-4f73oq88tp-4f73oq88tp.gz
 C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\staticwebassets.build.json
 C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\staticwebassets.build.json.cache
 C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\staticwebassets.development.json
@@ -364,3 +361,7 @@ C:\Users\samue\Attendance\Attendance\bin\Debug\net10.0\runtimes\win-arm64\native
 C:\Users\samue\Attendance\Attendance\bin\Debug\net10.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\samue\Attendance\Attendance\bin\Debug\net10.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\Attendance.csproj.Up2Date
+C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\Attendance.sourcelink.json
+C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\compressed\xkxdmc3469-{0}-whe5f2hpmh-whe5f2hpmh.gz
+C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\compressed\oc0z1ujtwk-{0}-snq8g8xrsf-snq8g8xrsf.gz
+C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\compressed\m2kj36v0ap-{0}-snq8g8xrsf-snq8g8xrsf.gz

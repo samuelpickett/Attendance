@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.navbar-nav{
+    /* padding: 0 20px; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.nav-link{
+    text-align: center;
+    color: #1E3F20 ;
+    text-decoration: none;
+    padding: 10px 30px;
+    font-family: "Merriweather", 'Lato', arial;
+}
+
+.nav-link:hover{
+    background-color: #1E3F20;
+    color: #91FF99;
+    border-radius: 5px; 
+    }
+    
 html {
   font-size: 14px;
 }

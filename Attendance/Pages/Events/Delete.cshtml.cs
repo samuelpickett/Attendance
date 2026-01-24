@@ -29,11 +29,11 @@ namespace Attendance.Pages_Events
                 return NotFound();
             }
 
-            var Event = await _context.Event.FirstOrDefaultAsync(m => m.Id == id);
+            var _event = await _context.Event.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Event is not null)
+            if (_event is not null)
             {
-                Event = Event;
+                Event = _event;
 
                 return Page();
             }
@@ -48,10 +48,10 @@ namespace Attendance.Pages_Events
                 return NotFound();
             }
 
-            var Event = await _context.Event.FindAsync(id);
-            if (Event != null)
+            var _event = await _context.Event.FindAsync(id);
+            if (_event != null)
             {
-                Event = Event;
+                Event = _event;
                 _context.Event.Remove(Event);
                 await _context.SaveChangesAsync();
             }

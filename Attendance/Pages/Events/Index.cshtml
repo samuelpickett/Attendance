@@ -2,7 +2,7 @@
 @model Attendance.Pages_Events.IndexModel
 
 @{
-    Layout = null;
+    ViewData["Title"] = "Event List";
 }
 
 <!DOCTYPE html>
@@ -10,11 +10,11 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>Event List</title>
 </head>
 <body>
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Create New Event</a>
 </p>
 <table class="table">
     <thead>
@@ -44,9 +44,9 @@
                 @Html.DisplayFor(modelItem => item.Location)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit Event</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Event Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete Event</a>
             </td>
         </tr>
 }
