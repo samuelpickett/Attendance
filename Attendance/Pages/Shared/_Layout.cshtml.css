@@ -2,18 +2,6 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-nav a{
-    text-align: center;
-    color: #1E3F20;
-    text-decoration: none;
-    padding: 0 20px;
-    font-family: 'Merriweather', arial, sans-serif;
-}
 
 a.navbar-brand {
   white-space: normal;
@@ -22,12 +10,6 @@ a.navbar-brand {
 }
 
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-  padding-top: 10px;
-}
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;

@@ -14,7 +14,7 @@
 </head>
 <body>
 <p>
-    <a asp-page="Create">Create New Event</a>
+    <a class = "link" asp-page="Create">Create</a>
 </p>
 <table class="table">
     <thead>
@@ -44,9 +44,9 @@
                 @Html.DisplayFor(modelItem => item.Location)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit Event</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Event Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete Event</a>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }
