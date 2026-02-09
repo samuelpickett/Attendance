@@ -12,9 +12,9 @@ namespace Attendance.Pages_Events
 {
     public class IndexModel : PageModel
     {
-        private readonly Attendance.Data.AppDbContext _context;
+        private readonly Attendance.Data.AppDbContext1 _context;
 
-        public IndexModel(Attendance.Data.AppDbContext context)
+        public IndexModel(Attendance.Data.AppDbContext1 context)
         {
             _context = context;
         }

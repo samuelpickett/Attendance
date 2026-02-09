@@ -8,19 +8,22 @@ using Microsoft.EntityFrameworkCore;
 using Attendance.Data;
 using Attendance.Models;
 
-namespace Attendance.Pages_Events
+namespace Attendance.Pages_Attendees
 {
     public class DeleteModel : PageModel
     {
-        private readonly Attendance.Data.AppDbContext1 _context;
+        private readonly Attendance.Data.AppDbContext2 _context;
 
-        public DeleteModel(Attendance.Data.AppDbContext1 context)
+        public DeleteModel(Attendance.Data.AppDbContext2 context)
         {
             _context = context;
         }
 
         [BindProperty]
-        public Event Event { get; set; } = default!;
+        public Attendee Attendee { get; set; } = default!;
+        [BindProperty(SupportsGet = true)]
+        public int EventId { get; set; }
+
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,11 +32,11 @@ namespace Attendance.Pages_Events
                 return NotFound();
             }
 
-            var _event = await _context.Event.FirstOrDefaultAsync(m => m.Id == id);
+            var attendee = await _context.Attendees.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (_event is not null)
+            if (attendee is not null)
             {
-                Event = _event;
+                Attendee = attendee;
 
                 return Page();
             }
@@ -48,15 +51,15 @@ namespace Attendance.Pages_Events
                 return NotFound();
             }
 
-            var _event = await _context.Event.FindAsync(id);
-            if (_event != null)
+            var attendee = await _context.Attendees.FindAsync(id);
+            if (attendee != null)
             {
-                Event = _event;
-                _context.Event.Remove(Event);
+                Attendee = attendee;
+                _context.Attendees.Remove(Attendee);
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Index", new {EventId = EventId});
         }
     }
 }

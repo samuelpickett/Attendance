@@ -7,19 +7,22 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Attendance.Data;
 using Attendance.Models;
+using System.Security.Cryptography.X509Certificates;
+using System.Reflection.Metadata;
 
 namespace Attendance.Pages_Events
 {
     public class DetailsModel : PageModel
     {
-        private readonly Attendance.Data.AppDbContext _context;
+        private readonly Attendance.Data.AppDbContext1 _context;
 
-        public DetailsModel(Attendance.Data.AppDbContext context)
+        public DetailsModel(Attendance.Data.AppDbContext1 context)
         {
             _context = context;
         }
 
         public Event Event { get; set; } = default!;
+        
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -39,5 +42,13 @@ namespace Attendance.Pages_Events
 
             return NotFound();
         }
-    }
+
+        public IActionResult OnPostSelectId(int id)
+        {
+            TempData["SavedId"] = id;
+
+            return RedirectToPage("/Attendees/Index");
+        }
+
+        }
 }

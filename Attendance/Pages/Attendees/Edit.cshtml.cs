@@ -9,19 +9,22 @@ using Microsoft.EntityFrameworkCore;
 using Attendance.Data;
 using Attendance.Models;
 
-namespace Attendance.Pages_Events
+namespace Attendance.Pages_Attendees
 {
     public class EditModel : PageModel
     {
-        private readonly Attendance.Data.AppDbContext1 _context;
+        private readonly Attendance.Data.AppDbContext2 _context;
 
-        public EditModel(Attendance.Data.AppDbContext1 context)
+        public EditModel(Attendance.Data.AppDbContext2 context)
         {
             _context = context;
         }
 
         [BindProperty]
-        public Event Event { get; set; } = default!;
+        public Attendee Attendee { get; set; } = default!;
+        [BindProperty(SupportsGet = true)]
+        public int EventId { get; set; }
+
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,12 +33,12 @@ namespace Attendance.Pages_Events
                 return NotFound();
             }
 
-            var _event =  await _context.Event.FirstOrDefaultAsync(m => m.Id == id);
-            if (_event == null)
+            var attendee =  await _context.Attendees.FirstOrDefaultAsync(m => m.Id == id);
+            if (attendee == null)
             {
                 return NotFound();
             }
-            Event = _event;
+            Attendee = attendee;
             return Page();
         }
 
@@ -48,7 +51,7 @@ namespace Attendance.Pages_Events
                 return Page();
             }
 
-            _context.Attach(Event).State = EntityState.Modified;
+            _context.Attach(Attendee).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +59,7 @@ namespace Attendance.Pages_Events
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!EventExists(Event.Id))
+                if (!AttendeeExists(Attendee.Id))
                 {
                     return NotFound();
                 }
@@ -66,12 +69,12 @@ namespace Attendance.Pages_Events
                 }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Index", new {EventId = EventId});
         }
 
-        private bool EventExists(int id)
+        private bool AttendeeExists(int id)
         {
-            return _context.Event.Any(e => e.Id == id);
+            return _context.Attendees.Any(e => e.Id == id);
         }
     }
 }

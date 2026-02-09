@@ -364,4 +364,4 @@ C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\Attendance.csproj.Up2Date
 C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\Attendance.sourcelink.json
 C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\compressed\oc0z1ujtwk-{0}-yshwb59pcf-yshwb59pcf.gz
 C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\compressed\m2kj36v0ap-{0}-yshwb59pcf-yshwb59pcf.gz
-C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\compressed\xkxdmc3469-{0}-xnl4khhj5a-xnl4khhj5a.gz
+C:\Users\samue\Attendance\Attendance\obj\Debug\net10.0\compressed\xkxdmc3469-{0}-6fjjqykvv0-6fjjqykvv0.gz

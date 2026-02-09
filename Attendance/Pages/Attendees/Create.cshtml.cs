@@ -8,24 +8,28 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Attendance.Data;
 using Attendance.Models;
 
-namespace Attendance.Pages_Events
+namespace Attendance.Pages_Attendees
 {
     public class CreateModel : PageModel
     {
-        private readonly Attendance.Data.AppDbContext1 _context;
+        private readonly Attendance.Data.AppDbContext2 _context;
 
-        public CreateModel(Attendance.Data.AppDbContext1 context)
+        public CreateModel(Attendance.Data.AppDbContext2 context)
         {
             _context = context;
         }
 
         public IActionResult OnGet()
         {
+            Attendee = new Attendee { EventId = EventId };
             return Page();
         }
 
         [BindProperty]
-        public Event Event { get; set; } = default!;
+        public Attendee Attendee { get; set; } = default!;
+        [BindProperty(SupportsGet = true)]
+        public int EventId { get; set; }
+
 
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
@@ -34,11 +38,11 @@ namespace Attendance.Pages_Events
             {
                 return Page();
             }
-
-            _context.Event.Add(Event);
+            Attendee.EventId = EventId;
+            _context.Attendees.Add(Attendee);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Index", new {EventId = EventId});
         }
     }
 }

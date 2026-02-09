@@ -37,9 +37,13 @@
             @Html.DisplayFor(model => model.Event.Location)
         </dd>
     </dl>
+    <a asp-page="/Attendees/Index" asp-route-EventId="@Model.Event.Id" class="btn link">
+    View Attendees
+    </a>
+
 </div>
 <div>
-    <a class="link" asp-page="./Edit" asp-route-id="@Model.Event.Id">Edit</a> |
+    <a class="link" asp-page="./Edit" asp-route-EventId="@Model.Event.Id">Edit</a> |
     <a class="link" asp-page="./Index">Back to List</a>
 </div>
 </body>
