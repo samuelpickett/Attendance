@@ -2,7 +2,7 @@
 @model Attendance.Pages_Attendees.CreateModel
 
         @{
-        
+        ViewData["Title"] = "Create";
         }
         
         <!DOCTYPE html>
@@ -45,7 +45,7 @@
 </div>
 
 <div>
-    <a asp-page="Index" asp-route-EventId="@Model.EventId" class="link">Back to List</a>
+    <a asp-page="./Index" asp-route-EventId="@Model.EventId" class="link">Back to List</a>
 </div>
 
 @section Scripts {

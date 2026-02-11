@@ -2,6 +2,7 @@
 @model Attendance.Pages_Attendees.DetailsModel
 
 @{
+    ViewData["Title"] = "Details";
 }
 <!DOCTYPE html>
 
@@ -43,8 +44,8 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Attendee.Id">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit" asp-route-id="@Model.Attendee.Id" asp-route-EventId="@Model.EventId" class="link">Edit</a> |
+    <a asp-page="./Index" asp-route-EventId="@Model.EventId" class="link">Back to List</a>
 </div>
 </body>
 </html>

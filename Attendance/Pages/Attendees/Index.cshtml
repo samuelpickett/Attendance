@@ -2,7 +2,7 @@
 @model Attendance.Pages_Attendees.IndexModel
 
 @{
-    
+    ViewData["Title"] = "Attendees";
 }
 
 <!DOCTYPE html>
@@ -20,9 +20,6 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Attendee[0].EventId)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Attendee[0].Name)
             </th>
             <th>
@@ -37,9 +34,6 @@
     <tbody>
 @foreach (var item in Model.Attendee) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.EventId)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>

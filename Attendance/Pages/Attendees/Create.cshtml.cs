@@ -19,16 +19,16 @@ namespace Attendance.Pages_Attendees
             _context = context;
         }
 
+        [BindProperty(SupportsGet = true)]
+        public int EventId { get; set; }
+
+        [BindProperty]
+        public Attendee Attendee { get; set; } = default!;
         public IActionResult OnGet()
         {
             Attendee = new Attendee { EventId = EventId };
             return Page();
         }
-
-        [BindProperty]
-        public Attendee Attendee { get; set; } = default!;
-        [BindProperty(SupportsGet = true)]
-        public int EventId { get; set; }
 
 
         // For more information, see https://aka.ms/RazorPagesCRUD.
@@ -41,8 +41,7 @@ namespace Attendance.Pages_Attendees
             Attendee.EventId = EventId;
             _context.Attendees.Add(Attendee);
             await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index", new {EventId = EventId});
+            return RedirectToPage("./Index", new {EventId});
         }
     }
 }
