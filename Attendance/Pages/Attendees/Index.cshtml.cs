@@ -73,7 +73,7 @@ namespace Attendance.Pages_Attendees
                     if (!eventExists)
                     {
                         ViewData["ErrorMessage"] = $"You are attempting to upload to an event that doesn't exist. Please use the View Attendees button in the Details page of the event. ";
-                        return Page();
+                        return Page(); 
                     }
 
                     _context.Attendees.Add(attendee);
