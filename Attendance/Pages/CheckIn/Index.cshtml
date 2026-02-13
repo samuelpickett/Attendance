@@ -1,0 +1,43 @@
+@page "{EventId:int}"
+@model Attendance.Pages_CheckIn.IndexModel
+
+<h2>Event Check-In</h2>
+
+<form method="get">
+    <input type="text" name="SearchTerm" value="@Model.SearchTerm" placeholder="Search name..." />
+    <button type="submit">Search</button>
+</form>
+
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var attendee in Model.Attendees)
+        {
+            <tr>
+                <td>@attendee.Name</td>
+                <td>
+                    @(attendee.IsCheckedIn ? "Checked In" : "Not Checked In")
+                </td>
+                <td>
+                    @if (!attendee.IsCheckedIn)
+                    {
+                        <form method="post" asp-page-handler="CheckIn">
+                            <input type="hidden" name="attendeeId" value="@attendee.Id" />
+                            <button type="submit" class="btn btn-success">
+                                Check In
+                            </button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
