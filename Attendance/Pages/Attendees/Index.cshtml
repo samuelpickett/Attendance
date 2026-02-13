@@ -13,6 +13,19 @@
     <title>Index</title>
 </head>
 <body>
+
+    <h5>Upload Attendees (CSV)</h5>
+
+    <form method="post" enctype="multipart/form-data" asp-page-handler="Upload">
+        <input type="file" name="CsvFile" accept=".csv" required />
+        <button type="submit" class="btn submit">Upload</button>
+    </form>
+    @* @if (ViewData["ErrorMessage"] is string message){
+        <p>@message</p>
+    } *@
+    <hr />
+
+
 <p>
     <a class="link" asp-page="Create" asp-route-EventId="@Model.EventId">Create New</a>
 </p>
@@ -38,7 +51,7 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IsCheckedIn)
+                <p>@(item.IsCheckedIn ? "Yes" : "No") </p>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CheckInTime)
