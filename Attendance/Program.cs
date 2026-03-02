@@ -4,8 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddDbContext<AppDbContext1>(options => options.UseSqlite("Data Source=events.db"));
-builder.Services.AddDbContext<AppDbContext2>(options => options.UseSqlite("Data Source=attendees.db"));
+builder.Services.AddDbContext<AppDbContext1>(options => options.UseSqlite("Data Source=eventTracker.db"));
 
 var app = builder.Build();
 
@@ -14,8 +13,6 @@ using (var scope = app.Services.CreateScope())
 {
     var db1 = scope.ServiceProvider.GetRequiredService<AppDbContext1>();
     db1.Database.EnsureCreated();
-    var db2 = scope.ServiceProvider.GetRequiredService<AppDbContext2>();
-    db2.Database.EnsureCreated();
 }
 
 

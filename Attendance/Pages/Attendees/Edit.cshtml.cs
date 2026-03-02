@@ -13,9 +13,9 @@ namespace Attendance.Pages_Attendees
 {
     public class EditModel : PageModel
     {
-        private readonly Attendance.Data.AppDbContext2 _context;
+        private readonly Attendance.Data.AppDbContext1 _context;
 
-        public EditModel(Attendance.Data.AppDbContext2 context)
+        public EditModel(Attendance.Data.AppDbContext1 context)
         {
             _context = context;
         }

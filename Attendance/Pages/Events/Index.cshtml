@@ -47,7 +47,7 @@
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a> |
-                <a asp-page="/CheckIn/Index" asp-route-EventId="@item.Id">Check In</a>
+                <a asp-page="/CheckIn/Index" asp-route-code="@item.CheckInCode" target="_blank">Check In</a>
             </td>
         </tr>
 }

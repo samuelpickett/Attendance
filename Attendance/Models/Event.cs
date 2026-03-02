@@ -9,5 +9,6 @@ public class Event
     [Required]
     public DateTime Date { get; set; }
     public string Location { get; set; } = "";
-    // public ICollection<Attendee> Attendees { get; set; } = new List<Attendee>();
+
+    public string CheckInCode { get; set; } = Guid.NewGuid().ToString("N");
 }

@@ -14,12 +14,6 @@ public class AppDbContext1 : DbContext
         : base(options) { }
 
     public DbSet<Attendance.Models.Event> Event {get; set;} = default!;
-
-}
-public class AppDbContext2 : DbContext
-{
-    public AppDbContext2(DbContextOptions<AppDbContext2> options)
-        : base(options) { }
     public DbSet<Attendance.Models.Attendee> Attendees => Set<Attendee>();
 
 }

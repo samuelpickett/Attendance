@@ -12,9 +12,9 @@ namespace Attendance.Pages_Attendees
 {
     public class DetailsModel : PageModel
     {
-        private readonly Attendance.Data.AppDbContext2 _context;
+        private readonly Attendance.Data.AppDbContext1 _context;
 
-        public DetailsModel(Attendance.Data.AppDbContext2 context)
+        public DetailsModel(Attendance.Data.AppDbContext1 context)
         {
             _context = context;
         }

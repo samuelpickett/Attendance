@@ -1,6 +1,8 @@
-@page "{EventId:int}"
+@page "{code}"
 @model Attendance.Pages_CheckIn.IndexModel
-
+@{
+    ViewData["Title"] = "Check In";
+}
 <h2>Event Check-In</h2>
 
 <form method="get">
@@ -10,6 +12,7 @@
 
 <hr />
 
+<h4>Checked-In: @ViewData["Checked_In"] / @ViewData["Total_Attendees"]</h4>
 <table class="table">
     <thead>
         <tr>

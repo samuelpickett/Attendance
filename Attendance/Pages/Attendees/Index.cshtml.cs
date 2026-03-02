@@ -14,13 +14,11 @@ namespace Attendance.Pages_Attendees
 {
     public class IndexModel : PageModel
     {
-        private readonly Attendance.Data.AppDbContext2 _context;
-        private readonly Attendance.Data.AppDbContext1 _context1;
+        private readonly Attendance.Data.AppDbContext1 _context;
 
-        public IndexModel(Attendance.Data.AppDbContext2 context, Attendance.Data.AppDbContext1 context1)
+        public IndexModel(Attendance.Data.AppDbContext1 context)
         {
             _context = context;
-            _context1 = context1;
         }
 
         public IList<Attendee> Attendee { get;set; } = new List<Attendee>();
@@ -33,10 +31,19 @@ namespace Attendance.Pages_Attendees
 
         public async Task OnGetAsync()
         {
+            var eventExists = await _context.Event.AnyAsync(e => e.Id == EventId);
+            if (!eventExists)
+            {
+                ViewData["ErrorMessage"] = $"You are attempting to create attendees for an event that doesn't exist. Please use the View Attendees button in the Details page of the event. ";
+            }
+            else
+            {
+
             Attendee = await _context.Attendees
             .Where(a => a.EventId == EventId)
             .OrderBy(a => a.Id)
             .ToListAsync();
+            }
         }
 
         public async Task<IActionResult> OnPostUploadAsync()
@@ -69,12 +76,7 @@ namespace Attendance.Pages_Attendees
                         CheckInTime = null
                     };
                 
-                    var eventExists = await _context1.Event.AnyAsync(e => e.Id == EventId);
-                    if (!eventExists)
-                    {
-                        ViewData["ErrorMessage"] = $"You are attempting to upload to an event that doesn't exist. Please use the View Attendees button in the Details page of the event. ";
-                        return Page(); 
-                    }
+                    
 
                     _context.Attendees.Add(attendee);
                 }
