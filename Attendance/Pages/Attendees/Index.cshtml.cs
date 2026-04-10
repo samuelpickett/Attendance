@@ -9,9 +9,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Attendance.Data;
 using Attendance.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Attendance.Pages_Attendees
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly Attendance.Data.AppDbContext1 _context;

@@ -58,7 +58,7 @@ td a:hover{
   background-color: #1b6ec2;
   border-color: #1861ac;
   margin: 10px 0;
-
+  
 }
 
 .submit:hover{
@@ -76,6 +76,9 @@ html {
   font-size: 14px;
 }
 
+.row_log_in{
+  justify-content: center;
+}
 @media (min-width: 768px) {
   html {
     font-size: 16px;

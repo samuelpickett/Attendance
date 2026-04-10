@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Attendance.Data;
 using Attendance.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Attendance.Pages_Events
 {
+    [Authorize]
     public class EditModel : PageModel
     {
         private readonly Attendance.Data.AppDbContext1 _context;

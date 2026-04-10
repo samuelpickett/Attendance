@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Attendance.Data;
 using Attendance.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Attendance.Pages_Events
 {
+    [Authorize]
     public class DeleteModel : PageModel
     {
         private readonly Attendance.Data.AppDbContext1 _context;
